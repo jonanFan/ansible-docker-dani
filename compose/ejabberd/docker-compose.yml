@@ -1,0 +1,23 @@
+version: '3'
+
+services: 
+  ejabberd:
+    build: .
+    image: 127.0.0.1:5000/ejabberd_ejabberd
+    ports:
+            - "5222:5222/tcp"
+            - "5269:5269/tcp"
+            - "5280:5280/tcp"
+    environment:
+      - XMPP_DOMAIN=piedpiper.com
+      - ERLANG_NODE=ejabberd
+      - EJABBERD_ADMINS=admin@piedpiper.com
+      - EJABBERD_USERS=admin@piedpiper.com:1234 josu@piedpiper.com:1234 fandi@piedpiper.com
+      - ERLANG_COOKIE=testCluster
+      - SKIP_MODULES_UPDATE=true
+      - EJABBERD_CLUSTER=true
+      - USE_DNS=true
+    dns: localhost
+    domainname: dockercomposecluster_ejabberd.docker
+    tty: true
+   

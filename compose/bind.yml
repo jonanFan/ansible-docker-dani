@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+   bind:
+     image: tvial/docker-bind
+     volumes:
+            - ./zones:/data/zones
+     ports:
+            - "53:53/udp"

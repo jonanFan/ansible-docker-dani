@@ -1,0 +1,50 @@
+---
+-
+  name: playbookBind
+  hosts: docker_all
+  #  become: true
+  #become_user: root
+  #become_method: sudo
+  #remote_user: hooli
+  tasks:
+
+    - name: Configure Docker
+      apt:
+         update_cache: yes
+         state: present
+         name: "{{item}}"
+      with_items:
+        - apt-transport-https 
+        - ca-certificates 
+        - curl 
+        - gnupg2 
+        - software-properties-common
+        - python
+        - python3
+        - python-pip
+       
+    - name: Anadir key
+      apt_key:
+        url: https://download.docker.com/linux/debian/gpg
+        state: present
+
+    - name: Anadir repositorio
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/debian stretch stable
+        state: present 
+
+    - name: Instalar Docker
+      apt: 
+        name: docker-ce
+        state: present
+        update_cache: yes
+
+    - name: Instalar docker compose
+      get_url:
+              url: https://github.com/docker/compose/releases/download/1.17.0/docker-compose-Linux-x86_64
+              dest: /usr/local/bin/docker-compose
+              mode: 0777
+    - name: Instalar docker-py
+      pip:
+          name: docker
+                             

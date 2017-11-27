@@ -1,0 +1,4 @@
+---
+- import_playbook: docker-install.yml
+- import_playbook: swarm.yml
+- import_playbook: clusters-deployment.yml
