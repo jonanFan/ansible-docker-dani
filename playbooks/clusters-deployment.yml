@@ -33,7 +33,6 @@
             command: "{{item}}"
             with_items:
                     - docker-compose -f bind.yml up -d
-                    - docker-compose -f bind.yml push
                     - docker stack deploy --compose-file bind.yml bind
                     - docker service scale bind_bind=3
             args:
@@ -43,7 +42,6 @@
             command: "{{item}}"
             with_items:
                     - docker-compose -f wordpress.yml up -d
-                    - docker-compose -f wordpress.yml push
                     - docker stack deploy --compose-file wordpress.yml wordpress
                     - docker service scale wordpress_wordpress=3
             args:
