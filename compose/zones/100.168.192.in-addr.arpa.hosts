@@ -1,0 +1,19 @@
+$TTL 86400
+@ IN  	SOA	@ root.piedpiper.com. (
+ 	2014011001	;Serial
+ 	3600		;Refresh
+ 	1800		;Retry
+ 	604800		;Expire
+	86400		;Minimum TTL
+)
+@	IN	NS ns1.piedpiper.com.
+@	IN	NS ns2.piedpiper.com.
+@	IN	NS ns3.piedpiper.com.
+
+15	IN	PTR ns1.piedpiper.com.
+16	IN	PTR ns2.piedpiper.com.
+17	IN	PTR ns3.piedpiper.com.
+
+15	IN	PTR base1.piedpiper.com.
+16	IN	PTR base2.piedpiper.com.
+17	IN	PTR base3.piedpiper.com.

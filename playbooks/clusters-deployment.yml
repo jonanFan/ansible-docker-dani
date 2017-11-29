@@ -11,11 +11,19 @@
 
           - file:
               path: /home/hooli/compose/repo.sh
-              mode: 0777
+              mode: 0555
 
           - file:
               path: /home/hooli/compose/services.sh
-              mode: 0777
+              mode: 0555
+
+          - file:
+              path: /home/hooli/compose/ejabberd/scripts/lib/functions.sh
+              mode: 0555
+
+          - file:
+              path: /home/hooli/compose/ejabberd/scripts/pre/30_join_cluster.sh
+              mode: 0555
 
           - name: Borrar servicios
             script: /home/hooli/repo/compose/services.sh

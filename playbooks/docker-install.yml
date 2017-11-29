@@ -20,6 +20,7 @@
         - gnupg2 
         - software-properties-common
         - dnsutils
+        - ldnsutils #Para cosas de DNS tambien
         - python
         - python3
         - python-pip

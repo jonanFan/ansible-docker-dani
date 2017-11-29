@@ -17,7 +17,7 @@ services:
       - SKIP_MODULES_UPDATE=true
       - EJABBERD_CLUSTER=true
       - USE_DNS=true
-    dns: localhost
+    dns: 192.168.100.15 
     domainname: dockercomposecluster_ejabberd.docker
     tty: true
    
