@@ -6,7 +6,7 @@
   tasks:
           - name: Copy files
             copy: 
-             src: /home/hooli/compose/
+             src: /home/hooli/repo/compose/
              dest: /home/hooli/compose/
 
           - file:
@@ -18,7 +18,7 @@
               mode: 0777
 
           - name: Borrar servicios
-            script: /home/hooli/compose/services.sh
+            script: /home/hooli/repo/compose/services.sh
 
           - name: Esperando a que el script finalice
             wait_for:
@@ -26,7 +26,7 @@
                     search_regex: Completed
 
           - name: Montar repositorio
-            script: /home/hooli/compose/repo.sh
+            script: /home/hooli/repo/compose/repo.sh
 
 
           - name: Desplegar DNS

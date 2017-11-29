@@ -1,6 +1,6 @@
 ---
 -
-  name: playbookBind
+  name: playbookInstaller
   hosts: docker_all
   #  become: true
   #become_user: root
@@ -19,6 +19,7 @@
         - curl 
         - gnupg2 
         - software-properties-common
+        - dnsutils
         - python
         - python3
         - python-pip
